@@ -3,21 +3,74 @@ import { Heart, Lock, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { loveConfig } from "@/config/love-config";
 
+function b64ToBytes(b64: string): Uint8Array {
+  const bin = atob(b64);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+
+function bytesToHex(buf: ArrayBuffer): string {
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function sha256Hex(input: string): Promise<string> {
+  const data = new TextEncoder().encode(input);
+  return bytesToHex(await crypto.subtle.digest("SHA-256", data));
+}
+
+async function decryptVideoUrl(password: string): Promise<string> {
+  const { salt, iv, ciphertext, iterations } = loveConfig.secret.encryptedVideo;
+  const enc = new TextEncoder();
+  const keyMaterial = await crypto.subtle.importKey(
+    "raw",
+    enc.encode(password),
+    "PBKDF2",
+    false,
+    ["deriveKey"],
+  );
+  const key = await crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: b64ToBytes(salt), iterations, hash: "SHA-256" },
+    keyMaterial,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"],
+  );
+  const pt = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: b64ToBytes(iv) },
+    key,
+    b64ToBytes(ciphertext),
+  );
+  return new TextDecoder().decode(pt);
+}
+
 export function SecretSection() {
   const [open, setOpen] = useState(false);
   const [unlocked, setUnlocked] = useState(false);
   const [pwd, setPwd] = useState("");
   const [error, setError] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (pwd.trim().toLowerCase() === loveConfig.secret.password.toLowerCase()) {
+    const guess = pwd.trim().toLowerCase();
+    const hash = await sha256Hex(guess);
+    if (hash !== loveConfig.secret.passwordHash) {
+      setError(true);
+      return;
+    }
+    try {
+      const url = await decryptVideoUrl(guess);
+      setVideoUrl(url);
       setUnlocked(true);
       setError(false);
-    } else {
+    } catch {
       setError(true);
     }
   }
+
 
   return (
     <div className="flex flex-col items-center gap-6 text-center">
