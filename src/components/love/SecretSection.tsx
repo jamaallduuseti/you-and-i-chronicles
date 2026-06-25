@@ -24,6 +24,9 @@ export function SecretSection() {
       <p className="max-w-md text-muted-foreground">
         Existe algo que eu guardei só pra você. Clica no coração... ou tente adivinhar a palavra mágica.
       </p>
+      <p className="max-w-md font-script text-lg text-primary/80 italic">
+        Dica: {loveConfig.secret.hint}
+      </p>
 
       <button
         onClick={() => setOpen(true)}
