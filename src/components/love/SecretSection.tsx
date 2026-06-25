@@ -156,9 +156,9 @@ export function SecretSection() {
                   <p className="font-script text-2xl leading-relaxed text-foreground">
                     {loveConfig.secret.message}
                   </p>
-                  {loveConfig.secret.videoUrl && (
+                  {videoUrl && (
                     <video
-                      src={loveConfig.secret.videoUrl}
+                      src={videoUrl}
                       controls
                       playsInline
                       className="mt-2 w-full rounded-2xl shadow-soft"
