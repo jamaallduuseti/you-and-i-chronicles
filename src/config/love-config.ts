@@ -106,12 +106,20 @@ De todo sentimento feito por um coração que lhe pertence,`,
   },
 
   secret: {
-    password: "Violeta",
+    // SHA-256 hash of the lowercased password (used only to validate input).
+    passwordHash:
+      "dcd09f2214637af39fbe8301bb4c6ccc0d12463306f125e503ad39de5ba36049",
+    // AES-GCM encrypted video URL. Key = PBKDF2(password, salt, 150000, SHA-256).
+    encryptedVideo: {
+      salt: "AVHKFn7nueXOM1vvU5yopQ==",
+      iv: "WgfGZWU8j4WfNfNt",
+      ciphertext:
+        "D8Mv4NCiaXlR9+iu0ZrIF535w73WkbYbRV7zBJ+79ioTRx24n7DDRd29SyUkqiYgEIGBEVo91zqSETbeUoa5LibPP6Sl5KieK/4WDJ1h3D3J",
+      iterations: 150000,
+    },
     hint: "A junção do nosso amor, o fruto perfeito da nossa relação 🌸",
     title: "Você descobriu nosso segredo 💖",
-    message:
-      "Esse é o nosso pedacinho mais especial. Pra sempre seu.",
-    videoUrl: segredoVideo.url,
+    message: "Esse é o nosso pedacinho mais especial. Pra sempre seu.",
   },
 };
 
