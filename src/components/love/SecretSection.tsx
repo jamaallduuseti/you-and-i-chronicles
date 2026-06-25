@@ -24,6 +24,9 @@ export function SecretSection() {
       <p className="max-w-md text-muted-foreground">
         Existe algo que eu guardei só pra você. Clica no coração... ou tente adivinhar a palavra mágica.
       </p>
+      <p className="max-w-md font-script text-lg text-primary/80 italic">
+        Dica: {loveConfig.secret.hint}
+      </p>
 
       <button
         onClick={() => setOpen(true)}
@@ -100,6 +103,14 @@ export function SecretSection() {
                   <p className="font-script text-2xl leading-relaxed text-foreground">
                     {loveConfig.secret.message}
                   </p>
+                  {loveConfig.secret.videoUrl && (
+                    <video
+                      src={loveConfig.secret.videoUrl}
+                      controls
+                      playsInline
+                      className="mt-2 w-full rounded-2xl shadow-soft"
+                    />
+                  )}
                 </motion.div>
               )}
             </motion.div>
