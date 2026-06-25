@@ -32,7 +32,7 @@ export const loveConfig = {
   },
 
   hero: {
-    photo: t4.url,
+    photo: n9.url,
     title: "Para o amor da minha vida",
     subtitle: "Uma pequena surpresa pra te dizer tudo que sinto ❤️",
     buttonLabel: "Começar nossa história",
@@ -61,7 +61,7 @@ export const loveConfig = {
       date: "Hoje",
       title: "E o amor só cresce",
       text: "A cada dia do seu lado, podendo ver como você vem crescendo e ver a mulher perfeita que está do meu lado. Mais que passamos por dificuldades, elas nos deixam mais fortes e me mostram o quão sortudo eu sou de ter você ao meu lado.",
-      photo: t4.url,
+      photo: n7.url,
     },
   ],
 
