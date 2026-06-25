@@ -12,6 +12,16 @@ import g3 from "@/assets/love/g3.jpeg.asset.json";
 import g4 from "@/assets/love/g4.jpeg.asset.json";
 import g5 from "@/assets/love/g5.jpeg.asset.json";
 import segredoVideo from "@/assets/love/segredo.mp4.asset.json";
+import n1 from "@/assets/gallery2/11.50.00.jpg.asset.json";
+import n2 from "@/assets/gallery2/11.50.03_1.jpg.asset.json";
+import n3 from "@/assets/gallery2/11.50.04.jpg.asset.json";
+import n4 from "@/assets/gallery2/11.50.03_2.jpg.asset.json";
+import n5 from "@/assets/gallery2/11.50.03.jpg.asset.json";
+import n6 from "@/assets/gallery2/11.50.15.jpg.asset.json";
+import n7 from "@/assets/gallery2/11.50.18.jpg.asset.json";
+import n8 from "@/assets/gallery2/11.50.08.jpg.asset.json";
+import n9 from "@/assets/gallery2/11.50.04_1.jpg.asset.json";
+import n10 from "@/assets/gallery2/11.50.06_1.jpg.asset.json";
 
 export const loveConfig = {
   couple: {
@@ -62,7 +72,7 @@ export const loveConfig = {
     { label: "Primeiro Natal juntos", date: "2022-12-25T00:00:00", icon: "🎄" },
   ],
 
-  gallery: [g1.url, g2.url, g3.url, g4.url, g5.url, t1.url, t2.url, t3.url, t4.url],
+  gallery: [n1.url, n2.url, n3.url, n4.url, n5.url, n6.url, n7.url, n8.url, n9.url, n10.url, g1.url, g2.url, g3.url, g4.url, g5.url, t1.url, t2.url, t3.url, t4.url],
 
   music: {
     youtubeId: "450p7goxZqg",
