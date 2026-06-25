@@ -11,7 +11,9 @@ import g2 from "@/assets/love/g2.jpeg.asset.json";
 import g3 from "@/assets/love/g3.jpeg.asset.json";
 import g4 from "@/assets/love/g4.jpeg.asset.json";
 import g5 from "@/assets/love/g5.jpeg.asset.json";
-import segredoVideo from "@/assets/love/segredo.mp4.asset.json";
+// NOTE: The secret video URL is NOT included in the client bundle as plaintext.
+// It is AES-GCM encrypted with a key derived (PBKDF2) from the secret password.
+// Only someone who enters the correct password can decrypt the URL at runtime.
 import n1 from "@/assets/gallery2/11.50.00.jpg.asset.json";
 import n2 from "@/assets/gallery2/11.50.03_1.jpg.asset.json";
 import n3 from "@/assets/gallery2/11.50.04.jpg.asset.json";
