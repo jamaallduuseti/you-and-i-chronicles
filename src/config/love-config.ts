@@ -56,10 +56,10 @@ export const loveConfig = {
   ],
 
   dates: [
-    { label: "Quando tudo começou", date: "2022-03-28", icon: "✨" },
-    { label: "Primeiro beijo", date: "2022-03-31", icon: "💋" },
-    { label: "Pedido de namoro", date: "2022-05-14", icon: "💍" },
-    { label: "Primeiro Natal juntos", date: "2022-12-25", icon: "🎄" },
+    { label: "Quando tudo começou", date: "2022-03-28T00:00:00", icon: "✨" },
+    { label: "Primeiro beijo", date: "2022-03-31T00:00:00", icon: "💋" },
+    { label: "Pedido de namoro", date: "2022-05-14T00:00:00", icon: "💍" },
+    { label: "Primeiro Natal juntos", date: "2022-12-25T00:00:00", icon: "🎄" },
   ],
 
   gallery: [g1.url, g2.url, g3.url, g4.url, g5.url, t1.url, t2.url, t3.url, t4.url],
