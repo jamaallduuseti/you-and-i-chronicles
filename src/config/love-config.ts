@@ -77,9 +77,9 @@ export const loveConfig = {
   gallery: [n1.url, n2.url, n3.url, n4.url, n5.url, n6.url, n7.url, n8.url, n9.url, n10.url, g1.url, g2.url, g3.url, g4.url, g5.url, t1.url, t2.url, t3.url, t4.url],
 
   music: {
-    youtubeId: "450p7goxZqg",
-    title: "All of Me",
-    artist: "John Legend",
+    youtubeId: "SOJpE1KMUbo",
+    title: "Raindance",
+    artist: "Dave feat. Tems",
     cover:
       "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80",
   },
